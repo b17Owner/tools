@@ -18,6 +18,7 @@ if [[ ! $1 ]];then
   exit
 fi
 
+# parse APP_NAME from DIR variable. Ex: /usr/local/src/APP_NAME
 DIR=$1
 APP_NAME=$(echo $DIR | awk -v name=test 'BEGIN{FS="/"} {
 for (i=NF;i>=1;i--)

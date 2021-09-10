@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git clone https://github.com/laravel/laravel.git
+cd laravel
+composer install
+mv .env.example .env
+sudo chown -R $USER:www-data storage
+sudo chown -R $USER:www-data bootstrap/cache
+chmod 777 -R storage bootstrap/cache
+php artisan key:generate
+cd ..

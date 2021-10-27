@@ -48,3 +48,9 @@ tools for quickly prepare OS and dev
 
 ### Добавить в .zshrc для отображения текущей даты и времени справа экрана
     RPROMPT="[%D{%f/%m/%Y}|%@]"
+
+## Bash 
+### awk
+Вывести количество вхождений каждой записи из 1 колонки файла csv ; если из больше 24
+
+    cat session_log_2dhs.csv| sort | awk -F ';' '{freq[$1]++} END{for (i in freq) if (freq[i]>24) print i, "(" freq[i] ")"}'

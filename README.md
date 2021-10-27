@@ -4,17 +4,32 @@ tools for quickly prepare OS and dev
 
 # TIPS
 
-### удобный шелл
+## Удобный шелл ZSH
+Установка zsh
+
     apt install zsh
 
-### интерактивный выбор с клавиатуры в консоле
-    sudo pip install percol
+### Framework для zsh (oh-my-zsh):
+Установка oh-my-zsh
 
-### framework для zsh (oh-my-zsh)
     sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-### Добавить в .zshrc для интерактивного выбора из истории
-#### zsh-history-search
+### Автодополнение строк как в fish:
+Установка плагина zsh-autosuggestions для oh-my-zsh
+
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    
+Добавить в файл ~/.oh-my-zsh/custom/zsh-autosuggestion.zsh для стилизации атводополнения
+
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fc5185"
+
+### Интерактивный поиск по истории команд
+Установка percol для включения интерактивного выбора в консоли
+
+    sudo pip install percol
+    
+---
+Добавить в файл ~/.zshrc
 
     function exists { which $1 &> /dev/null }
 

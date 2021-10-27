@@ -1,2 +1,7 @@
 # tools
-tools for quickly dev
+tools for quickly prepare OS and dev
+
+# tooltips 
+tips for best 
+
+

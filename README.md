@@ -21,7 +21,8 @@ tools for quickly prepare OS and dev
     
 Добавить в файл ~/.oh-my-zsh/custom/zsh-autosuggestion.zsh для стилизации атводополнения
 
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fc5185"
+    touch ~/.oh-my-zsh/custom/zsh-autosuggestion.zsh
+    echo 'ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#fc5185"' > ~/.oh-my-zsh/custom/zsh-autosuggestion.zsh
 
 ### Интерактивный поиск по истории команд
 Установка percol для включения интерактивного выбора в консоли

@@ -7,7 +7,7 @@ tools for quickly prepare OS and dev
 ## Удобный шелл ZSH
 Установка zsh
 
-    apt install zsh
+    sudo apt install zsh
     chsh -s /usr/bin/zsh # шелл по умолчанию
     
 ### Framework для zsh (oh-my-zsh):

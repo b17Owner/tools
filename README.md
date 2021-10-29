@@ -8,7 +8,8 @@ tools for quickly prepare OS and dev
 Установка zsh
 
     apt install zsh
-
+    chsh -s /usr/bin/zsh # шелл по умолчанию
+    
 ### Framework для zsh (oh-my-zsh):
 Установка oh-my-zsh
 
@@ -27,6 +28,7 @@ tools for quickly prepare OS and dev
 ### Интерактивный поиск по истории команд
 Установка percol для включения интерактивного выбора в консоли
 
+    sudo apt install pip
     sudo pip install percol
     
 ---

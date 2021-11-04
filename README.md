@@ -61,12 +61,20 @@ tools for quickly prepare OS and dev
 
 
 ### must have extensions for gnome
+https://extensions.gnome.org/extension/307/dash-to-dock/
 
 https://extensions.gnome.org/extension/3396/color-picker/
+
 https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/
+
 https://extensions.gnome.org/extension/1007/window-is-ready-notification-remover/
+
 https://extensions.gnome.org/extension/1112/screenshot-tool/
+
 https://extensions.gnome.org/extension/779/clipboard-indicator/
+
 https://extensions.gnome.org/extension/7/removable-drive-menu/
+
 https://extensions.gnome.org/extension/6/applications-menu/
+
 https://extensions.gnome.org/extension/3780/ddterm/

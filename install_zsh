@@ -1,0 +1,36 @@
+#!/bin/bash
+
+sudo apt install zsh
+
+# oh-my-zsh install
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install pip & percol for interactive select
+sudo apt install pip
+sudo pip install percol
+
+# add percol_select_history function to ~/.zshrc
+if grep -Fq "percol_select_history" ~/.zshrc
+then
+    echo "Function percol_select_history is exist"
+else
+
+cat >> ~/.zshrc <<<'
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
+'
+fi
+
+chsh -s /usr/bin/zsh # default shell

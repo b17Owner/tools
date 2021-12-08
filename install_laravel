@@ -1,10 +1,10 @@
 #!/bin/bash
 NAME=$1
 if [[ ! $NAME ]];then
-  NAME='laravel'
+  NAME='laravel-app'
 fi
 git clone https://github.com/laravel/laravel.git $NAME
-cd laravel
+cd $NAME
 docker run --rm -v $(pwd):/app composer install
 # composer install
 # mv .env.example .env

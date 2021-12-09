@@ -1,0 +1,48 @@
+#!/bin/bash
+
+DATE=$(date +%F)
+PWD=$(pwd)
+
+echo 'DATE: '$DATE
+echo 'PWD: '$PWD
+
+if [[ ! $1 ]];then
+  echo "Command: tar_src {DIR}"
+  echo "dir sliced by /, and get last val as APP_NAME"
+  echo "Ex:"
+  echo "  tar_src /home/user/app-test"
+  echo ""
+  echo "APP_NAME = app-test"
+
+  echo "Output: \$APP_NAME.\$DATE.tar.gz"
+  exit
+fi
+
+# parse APP_NAME from DIR variable. Ex: /usr/local/src/APP_NAME
+DIR=$1
+APP_NAME=$(echo $DIR | awk -v name=test 'BEGIN{FS="/"} {
+for (i=NF;i>=1;i--)
+{
+  if ($i != "") {
+    name=$i
+    break
+  }
+}
+print name
+}' | tr -dc '[:alnum:]\-_\n\r' | tr '[:upper:]' '[:lower:]')
+
+echo 'DIR: '$DIR
+echo 'APP_NAME: '$APP_NAME
+
+cd $DIR
+pwd
+
+echo 'Create... '${APP_NAME}_${DATE}.tar.gz
+
+tar zcf ~/${APP_NAME}_${DATE}.tar.gz \
+  --exclude 'node_modules' \
+  --exclude '.editorconfig' \
+  --exclude '.gitignore' \
+  --exclude '.nuxt' \
+  --exclude 'package-lock.json' \
+  .

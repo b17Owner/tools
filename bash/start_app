@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -a
+source .env
+
+echo "Starting ${APP_NAME}"
+
+docker-compose --env-file .env up -d

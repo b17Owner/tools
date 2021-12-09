@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -a
+source .env
+
+echo "Init app and build ${APP_NAME} container"
+
+# generate vhost.conf
+NGINX_VARS='$BACKEND_DOMAIN'
+envsubst "$NGINX_VARS" < conf/nginx/nginx.conf > conf/nginx/vhost.conf
+
+# generate laravel .env file
+LARAVEL_VARS='$BACKEND_DOMAIN:$APP_NAME:$MYSQL_PORT:$MYSQL_DATABASE:$MYSQL_ROOT_PASSWORD'
+envsubst "$LARAVEL_VARS" < conf/laravel-app/.env.example > laravel-app/.env
+
+# build containers
+docker-compose --env-file .env build
+

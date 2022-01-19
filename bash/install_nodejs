@@ -3,6 +3,6 @@
 # install build tools
 apt-get install -y build-essential
 
-# download latest nodejs, compile and install
-curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
+# download latest lts nodejs, compile and install
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs

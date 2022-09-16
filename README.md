@@ -1,36 +1,35 @@
 ## tools
-tools for quickly prepare OS and dev
+Инструменты для подготовки ОС
 
-# TIPS
+### Управление swap разделом
+Создание swap раздела 4G
 
-## Shell
-### Zsh
-Добавить в .zshrc для отображения текущей даты и времени справа экрана
-    RPROMPT="[%D{%f/%m/%Y}|%@]"
+    create_swap
+    
+Удаление swap раздела
 
-### Bash 
-#### awk
-Вывести количество вхождений каждой записи из 1 колонки файла csv ; если из больше 24
+    remove_swap
+    
+### Установка zsh + percol (поиск по истории)
 
-    cat session_log_2dhs.csv| sort | awk -F ';' '{freq[$1]++} END{for (i in freq) if (freq[i]>24) print i, "(" freq[i] ")"}'
+    install_zsh
 
+### Установка docker & docker-compose
+В файле указать версию docker-compose
+https://github.com/docker/compose/releases/
 
+    install_docker
 
-### must have extensions for gnome
-https://extensions.gnome.org/extension/307/dash-to-dock/
+### Установка Laravel (latest)
 
-https://extensions.gnome.org/extension/3396/color-picker/
+    install_laravel [name]
+    
+### Установка nodejs (latest lts)
 
-https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/
+    install_nodejs
+    
+### Обновление ssl
+В файле указать версию ssl для установки
+https://www.openssl.org/source/
 
-https://extensions.gnome.org/extension/1007/window-is-ready-notification-remover/
-
-https://extensions.gnome.org/extension/1112/screenshot-tool/
-
-https://extensions.gnome.org/extension/779/clipboard-indicator/
-
-https://extensions.gnome.org/extension/7/removable-drive-menu/
-
-https://extensions.gnome.org/extension/6/applications-menu/
-
-https://extensions.gnome.org/extension/3780/ddterm/
+    update_ssl

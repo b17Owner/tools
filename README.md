@@ -33,3 +33,8 @@ https://github.com/docker/compose/releases/
 https://www.openssl.org/source/
 
     update_ssl
+
+### Установка python (altinstall)
+В файле указать версию python https://www.python.org/ftp/python/
+
+    install_python

@@ -2,6 +2,8 @@
 
 VERSION='3.10.7'
 
+apt-get install zlib1g-dev
+
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tar.xz
 tar xf Python-${VERSION}.tar.xz
 cd Python-${VERSION}

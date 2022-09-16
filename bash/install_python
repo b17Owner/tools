@@ -2,6 +2,7 @@
 
 VERSION='3.10.7'
 
+apt-get install libffi-dev
 apt-get install zlib1g-dev
 
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tar.xz

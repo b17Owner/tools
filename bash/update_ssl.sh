@@ -17,14 +17,11 @@ make install
 
 touch /etc/profile.d/openssl.sh
 
-PROFILE=`cat <<_EOF_
+cat > /etc/profile.d/openssl.sh <<<'
 #!/bin/sh
 export PATH=/opt/openssl/bin:${PATH}
 export LD_LIBRARY_PATH=/opt/openssl/lib:${LD_LIBRARY_PATH}
-_EOF_
-`
-
-echo "$PROFILE" > /etc/profile.d/openssl.sh
+'
 
 chmod +x /etc/profile.d/openssl.sh
 source /etc/profile.d/openssl.sh

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+VERSION='3.10.7'
+
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tar.xz
+tar xf Python-${VERSION}.tar.xz
+cd Python-${VERSION}
+./configure --with-openssl=/opt/openssl/ --with-openssl-rpath=auto --enable-optimizations
+make -j 8
+make altinstall

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-VERSION='3.10.7'
+VERSION='3.10.10'
 
-apt-get install libffi-dev
-apt-get install zlib1g-dev
+apt update
+apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tar.xz
 tar xf Python-${VERSION}.tar.xz
 cd Python-${VERSION}
-./configure --with-openssl=/opt/openssl/ --with-openssl-rpath=auto --enable-optimizations
-make -j 8
+./configure --enable-optimizations
+nproc | xargs -I {} -t make -j {}
 make altinstall
